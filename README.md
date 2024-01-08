@@ -4,9 +4,7 @@
 This open-source project demonstrates an advanced implementation of hexagonal architecture, where the agents are RESTful microservices, and the core consists of gRPC microservices.
 The project's design allows for seamless integration and transformation of REST requests into gRPC calls to the core services, ensuring a decoupled, scalable, and efficient system.
 
-<center>
 ![Hexagonal Architecture](./resources/images/313px-Hexagonal_Architecture.svg.png)
-</center>
 
 The project is composed by two gRPC core services and one REST agent:
 1. **The Core Echo Service**: This gRPC microservice implements CRUP operations for the albums and photos entities. The essential of this service is that it returns what it receives.
