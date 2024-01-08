@@ -4,6 +4,7 @@
 .settings/
 target/
 Users/
+/tools/*
 .classpath
 .project
 HELP.md
