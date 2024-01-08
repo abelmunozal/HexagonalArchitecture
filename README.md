@@ -89,19 +89,30 @@ As guidelines:
 ### grpcurl
 
     ```
-    curl --location 'http://localhost:8080/albums'
+    grpcurl --plaintext localhost:9090 describe
     ```
+    ![grpcurl describe](resources/images/grpcurl-describe.png)
 
-   ```
-   curl --location 'http://localhost:8080/albums' \
-        --header 'Content-Type: application/json' \
-        --data '{"name": "REST Test album 3", "description": "This is a REST test album", "photos": []}'
-   ```
+    ```
+    grpcurl --plaintext localhost:9090 inditex.v1.AlbumService/findAll
+    ```
+    ![grpcurl describe](resources/images/grpcurl-findAll.png)
+
 ### Postman
 
 
 
 ### curl
+
+    ```
+    curl --location 'http://localhost:8080/albums'
+    ```
+
+    ```
+    curl --location 'http://localhost:8080/albums' \
+        --header 'Content-Type: application/json' \
+        --data '{"name": "REST Test album 3", "description": "This is a REST test album", "photos": []}'
+    ```
 
 
 ### Making Requests
