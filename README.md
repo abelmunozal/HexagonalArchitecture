@@ -91,11 +91,13 @@ As guidelines:
     ```
     grpcurl --plaintext localhost:9090 describe
     ```
+
     ![grpcurl describe](resources/images/grpcurl-describe.png)
 
     ```
     grpcurl --plaintext localhost:9090 inditex.v1.AlbumService/findAll
     ```
+    
     ![grpcurl describe](resources/images/grpcurl-findAll.png)
 
 ### Postman
