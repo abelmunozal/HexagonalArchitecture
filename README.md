@@ -88,15 +88,15 @@ As guidelines:
 
 ### grpcurl
 
-    ```
+```
     grpcurl --plaintext localhost:9090 describe
-    ```
+```
 
     ![grpcurl describe](resources/images/grpcurl-describe.png)
 
-    ```
+```
     grpcurl --plaintext localhost:9090 inditex.v1.AlbumService/findAll
-    ```
+```
 
     ![grpcurl findAll](resources/images/grpcurl-findAll.png)
 
@@ -108,16 +108,15 @@ As guidelines:
 
 ### curl
 
-    ```
+```
     curl --location 'http://localhost:8080/albums'
-    ```
+```
 
-    ```
+```
     curl --location 'http://localhost:8080/albums' \
         --header 'Content-Type: application/json' \
         --data '{"name": "REST Test album 3", "description": "This is a REST test album", "photos": []}'
-    ```
-
+```
 
 ### Making Requests
 - Use any REST client to interact with the RESTful services.
