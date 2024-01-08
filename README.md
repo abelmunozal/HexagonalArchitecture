@@ -10,13 +10,13 @@ The project is composed by two gRPC core services and one REST agent:
 2. **The Core Service**: This gRPC microservice implements CRUP operations for the albums and photos entities. The essential of this service is that it stores the entities in an H2 embedded database in memory.
     This microservice offers its functionalities through the address grpc://localhost:9090.
 3. **The RESTful Agent Service**: This RESTful microservice allows CRUP operations through the core services in a RESTful way. This agent has been implemented using the open API features.
-    This microservice offers its functionalities through the address http://localhost:8081.
-    You can access the OpenAPI documentation through http://localhost:8080/swagger-ui/index.html
+    This microservice offers its functionalities through the address `http://localhost:8080`.
+    You can access the OpenAPI documentation through `http://localhost:8080/swagger-ui/index.html`
 
     You could decide which one of the core microservices is going to be used by the agent setting the environment variable BCNC_GRPC_SERVER_ADDRESS to:
     - **static://localhost:9091** for the ECHO core service.
     - **static://localhost:9090** for the H2 core service.
-    The BCNC_GRPC_SERVER_ADDRESS can be updated modifing the **build.cmd** script.
+    The BCNC_GRPC_SERVER_ADDRESS can be updated modifying the **build.cmd** script.
 
 ## Architecture
 ### Hexagonal Architecture
@@ -42,9 +42,19 @@ The project is composed by two gRPC core services and one REST agent:
 - Docker Desktop 
 
 ### Installation and Setup
+In order to install, build, execute and test the project you can follow two flavours:
+
+#### Windows 10/11 scripts
 1. **Clone the repository**: `git clone https://github.com/yourproject/hexagonal-architecture.git`
-2. **Build the project**: Navigate to the project directory and run `docker-compose up --build`
-3. **Access the REST API**: The API is accessible at `http://localhost:8080`
+2. **Download the tools**: You must download and deploy the required tools following the guidelines set in the [tools/README.md](./tools/README.md) document.
+3. **Set the environment variables**: To do that execute the script [setenv.cmd](./setenv.cmd).
+4. **Build the project**: To do that execute the script [build.cmd](./build.cmd).
+    This script compiles, performs the unit tests, the integration tests and leaves the microservices running in independent consoles.
+
+    - The gRPC API for the H2 core service is accessible at `grpc://localhost:9090`.
+    - The gRPC API for the ECHO core service is accessible at `grpc://localhost:9091`.
+    - The RESTful API is accessible at `http://localhost:8080/albums` and `http://localhost:8080/photos`.
+    - The OpenAPI documentation is accessible at `http://localhost:8080/swagger-ui/index.html`.
 
 ## Usage
 ### Making Requests
