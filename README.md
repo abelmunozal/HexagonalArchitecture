@@ -13,10 +13,10 @@ The project is composed by two gRPC core services and one REST agent:
     This microservice offers its functionalities through the address `http://localhost:8080`.
     You can access the OpenAPI documentation through `http://localhost:8080/swagger-ui/index.html`
 
-    You could decide which one of the core microservices is going to be used by the agent setting the environment variable BCNC_GRPC_SERVER_ADDRESS to:
+    You could decide which one of the core microservices is going to be used by the agent setting the environment variable `BCNC_GRPC_SERVER_ADDRESS` to:
     - **static://localhost:9091** for the ECHO core service.
     - **static://localhost:9090** for the H2 core service.
-    The BCNC_GRPC_SERVER_ADDRESS can be updated modifying the **build.cmd** script.
+    The `BCNC_GRPC_SERVER_ADDRESS` can be updated modifying the [build.cmd](build.cmd) script.
 
 ## Architecture
 ### Hexagonal Architecture
