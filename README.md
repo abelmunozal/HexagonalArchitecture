@@ -97,8 +97,8 @@ As guidelines:
     ```
     grpcurl --plaintext localhost:9090 inditex.v1.AlbumService/findAll
     ```
-    
-    ![grpcurl describe](resources/images/grpcurl-findAll.png)
+
+    ![grpcurl findAll](resources/images/grpcurl-findAll.png)
 
 ### Postman
 
