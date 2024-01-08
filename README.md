@@ -118,13 +118,6 @@ As guidelines:
         --data '{"name": "REST Test album 3", "description": "This is a REST test album", "photos": []}'
 ```
 
-### Making Requests
-- Use any REST client to interact with the RESTful services.
-- Example request: `curl -X GET http://localhost:8080/api/v1/resource`
-
-## License
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
-
 ## Acknowledgments
 - Special thanks to contributors and the open-source community.
 - Inspired by the principles of hexagonal architecture and microservices.
