@@ -92,19 +92,19 @@ As guidelines:
     grpcurl --plaintext localhost:9090 describe
 ```
 
-    ![grpcurl describe](resources/images/grpcurl-describe.png)
+![grpcurl describe](resources/images/grpcurl-describe.png)
 
 ```
     grpcurl --plaintext localhost:9090 inditex.v1.AlbumService/findAll
 ```
 
-    ![grpcurl findAll](resources/images/grpcurl-findAll.png)
+![grpcurl findAll](resources/images/grpcurl-findAll.png)
 
 ### Postman
 
-    ![grpc findAll](resources/images/postman-findAll.png)
+![grpc findAll](resources/images/postman-findAll.png)
 
-    ![http findAll](resources/images/postman-http-findAll.png)
+![http findAll](resources/images/postman-http-findAll.png)
 
 ### curl
 
