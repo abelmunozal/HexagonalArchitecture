@@ -56,6 +56,17 @@ In order to install, build, execute and test the project you can follow two flav
     - The RESTful API is accessible at `http://localhost:8080/albums` and `http://localhost:8080/photos`.
     - The OpenAPI documentation is accessible at `http://localhost:8080/swagger-ui/index.html`.
 
+#### Docker Compose
+1. **Clone the repository**: `git clone https://github.com/yourproject/hexagonal-architecture.git`
+2. **Build the project**: Run `docker-compose up --build`.
+
+    This docker-compose script compiles, performs the unit tests, the integration tests and leaves the microservices running.
+
+    - The gRPC API for the H2 core service is accessible at `grpc://localhost:9090`.
+    - The gRPC API for the ECHO core service is accessible at `grpc://localhost:9091`.
+    - The RESTful API is accessible at `http://localhost:8080/albums` and `http://localhost:8080/photos`.
+    - The OpenAPI documentation is accessible at `http://localhost:8080/swagger-ui/index.html`.
+
 ## Usage
 ### Making Requests
 - Use any REST client to interact with the RESTful services.
