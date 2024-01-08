@@ -58,6 +58,11 @@ In order to install, build, execute and test the project you can follow two flav
     - The RESTful API is accessible at `http://localhost:8080/albums` and `http://localhost:8080/photos`.
     - The OpenAPI documentation is accessible at `http://localhost:8080/swagger-ui/index.html`.
 
+    You could decide which one of the core microservices is going to be used by the agent setting the environment variable `BCNC_GRPC_SERVER_ADDRESS` to:
+    - **static://localhost:9091** for the ECHO core service.
+    - **static://localhost:9090** for the H2 core service.
+    The `BCNC_GRPC_SERVER_ADDRESS` can be updated modifying the [build.cmd](build.cmd) script.
+
 #### Docker Compose
 1. **Clone the repository**: `git clone https://github.com/yourproject/hexagonal-architecture.git`
 2. **Build the project**: Run `docker-compose up --build`.
@@ -69,27 +74,13 @@ In order to install, build, execute and test the project you can follow two flav
     - The RESTful API is accessible at `http://localhost:8080/albums` and `http://localhost:8080/photos`.
     - The OpenAPI documentation is accessible at `http://localhost:8080/swagger-ui/index.html`.
 
-## Usage
-### Making Requests
-- Use any REST client to interact with the RESTful services.
-- Example request: `curl -X GET http://localhost:8080/api/v1/resource`
-
-## Contributing
-Contributions to this project are welcome. Please follow these steps:
-1. Fork the repository.
-2. Create a new feature branch (`git checkout -b feature/yourFeature`).
-3. Commit your changes (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/yourFeature`).
-5. Create a new Pull Request.
-
-## Code of Conduct
-Please refer to the `CODE_OF_CONDUCT.md` file for guidelines on community interaction.
+    You could decide which one of the core microservices is going to be used by the agent setting the environment variable `BCNC_GRPC_SERVER_ADDRESS` to:
+    - **static://localhost:9091** for the ECHO core service.
+    - **static://localhost:9090** for the H2 core service.
+    The `BCNC_GRPC_SERVER_ADDRESS` can be updated modifying the [docker-compose.yml](docker-compose.yml) script.
 
 ## License
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
-
-## Contact
-For support or queries, please email us at `support@yourproject.com`.
 
 ## Acknowledgments
 - Special thanks to contributors and the open-source community.
