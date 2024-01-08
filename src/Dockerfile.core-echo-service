@@ -1,0 +1,14 @@
+# Stage 1: Build the application
+FROM maven:3.8.5-openjdk-17 as builder
+COPY protobuf /usr/src/workfolder/protobuf
+COPY core-echo-service /usr/src/workfolder/core-echo-service
+WORKDIR /usr/src/workfolder/core-echo-service
+RUN mvn clean package
+#WORKDIR /usr/src/
+#CMD ["ls", "-l"]
+
+# Stage 2: Create the final image
+FROM openjdk:17-slim
+COPY --from=builder /usr/src/workfolder/core-echo-service/target/core-echo-service-0.1.0.jar /usr/app/app.jar
+WORKDIR /usr/app
+ENTRYPOINT ["java", "-jar", "app.jar"]

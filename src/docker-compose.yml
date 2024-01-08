@@ -1,0 +1,44 @@
+version: "3.8"
+name: bcnc_selection_process
+services:
+  core-echo-service:
+    container_name: core-echo-service
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.core-echo-service
+    networks:
+      - bcnc-network
+    ports:
+      - 9091:9090
+    restart: unless-stopped
+  core-service:
+    container_name: core-service
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.core-service
+    networks:
+      - bcnc-network
+    ports:
+      - 9090:9090
+    depends_on:
+      - core-echo-service
+    restart: unless-stopped
+  agent-rest-service:
+    container_name: agent-rest-service
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.agent-rest-service
+    environment:
+      - BCNC_GRPC_SERVER_ADDRESS=static://core-service:9090
+    networks:
+      - bcnc-network
+    ports:
+      - 8080:8080
+#    extra_hosts:
+#      - host.docker.internal:host-gateway
+    depends_on:
+      - core-echo-service
+      - core-service
+    restart: unless-stopped
+networks:
+  bcnc-network:

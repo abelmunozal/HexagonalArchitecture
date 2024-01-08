@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.inditex.selectionprocess.grpc.protobuf";
+option java_outer_classname = "InditexProto";
+
+package inditex.v1;
+
+// The Album service definition.
+service AlbumService {
+  rpc create(Album) returns (Album);
+  rpc update(Album) returns (Album);
+  rpc delete(google.protobuf.StringValue) returns (google.protobuf.Empty);
+  rpc findById(google.protobuf.StringValue) returns (Album);
+  rpc findAll(google.protobuf.Empty) returns (stream Album);
+}
+
+service PhotoService {
+  rpc create(Photo) returns (Photo);
+  rpc update(Photo) returns (Photo);
+  rpc delete(google.protobuf.StringValue) returns (google.protobuf.Empty);
+  rpc findById(google.protobuf.StringValue) returns (Photo);
+  rpc findAll(google.protobuf.Empty) returns (stream Photo);
+
+  rpc uploadImage(stream ImageUploadRequest) returns (google.protobuf.Empty);
+  rpc downloadImage(google.protobuf.StringValue) returns (stream ImageDownloadResponse);
+}
+
+message Album {
+  string id = 1; // UUID4
+  string name = 2;
+  string description = 3;
+  repeated string photos = 5;// UUID4s
+}
+
+message Photo {
+	string id = 1; // UUID4
+	string name = 2;
+	string description = 3;
+	string type = 4; // MimeType
+}
+
+message ContentChunk {
+	bytes content = 1;
+	int32 size = 2;
+}
+
+message ImageUploadRequest {
+	oneof request {
+		Photo metadata = 1;
+		ContentChunk chunk = 2;
+	}
+}
+
+message ImageDownloadResponse {
+	oneof request {
+		Photo metadata = 1;
+		ContentChunk chunk = 2;
+	}
+}

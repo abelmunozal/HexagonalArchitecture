@@ -1,0 +1,10 @@
+@echo off
+set PROJECT_FOLDER=%~dp0
+set PROJECT_TOOLS_FOLDER=%PROJECT_FOLDER%tools
+set JAVA_HOME=%PROJECT_TOOLS_FOLDER%\jdk-17.0.2
+set MAVEN_HOME=%PROJECT_TOOLS_FOLDER%\apache-maven-3.9.6
+rem set GRADLE_HOME=%PROJECT_TOOLS_FOLDER%\gradle-8.5
+rem set PATH=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%GRADLE_HOME%\bin;%PATH%
+set PATH=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%PATH%
+echo "Done!!"
+

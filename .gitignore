@@ -1,3 +1,13 @@
+# Development environment and tools
+.metadata/
+.mvn/
+.settings/
+target/
+Users/
+.classpath
+.project
+HELP.md
+
 # Compiled class file
 *.class
 

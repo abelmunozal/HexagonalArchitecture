@@ -1,0 +1,12 @@
+# Stage 1: Build the application
+FROM maven:3.8.5-openjdk-17 as builder
+COPY protobuf /usr/src/workfolder/protobuf
+COPY core-service /usr/src/workfolder/core-service
+WORKDIR /usr/src/workfolder/core-service
+RUN mvn clean package
+
+# Stage 2: Create the final image
+FROM openjdk:17-slim
+COPY --from=builder /usr/src/workfolder/core-service/target/core-service-0.1.0.jar /usr/app/app.jar
+WORKDIR /usr/app
+ENTRYPOINT ["java", "-jar", "app.jar"]
