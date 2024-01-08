@@ -1,57 +1,55 @@
-# Arquitectura Hexagonal con Microservicios REST y gRPC
+# Hexagonal Architecture with REST and gRPC Microservices
 
-## Descripción del Proyecto
-Este repositorio HexagonalArchitecture es un ejemplo de proyecto open-source que implementa una arquitectura hexagonal innovadora.
-Utiliza microservicios REST como agentes que interactúan con el core del sistema, compuesto por microservicios gRPC.
-Esta estructura facilita la escalabilidad, mantenibilidad y la independencia entre los componentes del sistema.
+## Overview
+This open-source project demonstrates an advanced implementation of hexagonal architecture, where the agents are RESTful microservices, and the core consists of gRPC microservices.
+The project's design allows for seamless integration and transformation of REST requests into gRPC calls to the core services, ensuring a decoupled, scalable, and efficient system.
 
-## Arquitectura del Proyecto
-### Componentes
-- **Agentes REST**: Microservicios que reciben y manejan peticiones REST.
-- **Core con Microservicios gRPC**: Lógica de negocio implementada mediante microservicios que comunican usando gRPC.
-### Flujo de Datos
-- Las peticiones REST son recibidas por los agentes.
-- Los agentes transforman estas peticiones en llamadas gRPC.
-- El core procesa estas llamadas y retorna la respuesta.
+## Architecture
+### Hexagonal Architecture
+- **Agents (Adapters)**: RESTful microservices acting as the point of contact for external requests.
+- **Core (Ports)**: gRPC microservices handling the business logic and data processing.
+- **Inter-Service Communication**: REST to gRPC transformation ensuring effective communication within the architecture.
 
-## Tecnologías Utilizadas
-- **Spring Boot**: Para el desarrollo de microservicios REST.
-- **gRPC**: Para la comunicación eficiente entre microservicios.
-- **Docker**: Para la contenerización y fácil despliegue de los servicios.
-- **Kubernetes**: Para la orquestación y manejo de los contenedores.
+## Features
+- RESTful API endpoints for user interaction.
+- High-performance gRPC services for core business logic.
+- Efficient communication protocol between different architectural layers.
+- Scalable and maintainable codebase adhering to SOLID principles.
 
-## Cómo Empezar
-### Requisitos Previos
-- Docker y Kubernetes instalados.
-- Conocimientos básicos en Spring Boot y gRPC.
-### Instalación y Despliegue
-1. Clonar el repositorio: `git clone [url-del-repositorio]`.
-2. Construir los contenedores Docker: `docker-compose up`.
-3. Desplegar en Kubernetes: `kubectl apply -f k8s-config.yml`.
+## Getting Started
+### Prerequisites
+- Docker
+- Kubernetes (for deployment)
+- gRPC toolkit
+- Any REST client (Postman, curl, etc.)
 
-## Contribuciones
-### Directrices para Contribuir
-- Fork del repositorio.
-- Crear una nueva rama para la característica o corrección.
-- Realizar los cambios.
-- Enviar un Pull Request con una descripción detallada.
-### Estándares de Código
-- Seguir las convenciones de codificación de Java y gRPC.
-- Escribir tests para nuevas características.
-- Documentar los cambios significativos.
+### Installation and Setup
+1. **Clone the repository**: `git clone https://github.com/yourproject/hexagonal-architecture.git`
+2. **Build the project**: Navigate to the project directory and run `docker-compose up --build`
+3. **Access the REST API**: The API is accessible at `http://localhost:8080`
 
-## Documentación Adicional
-- Arquitectura Hexagonal: Una descripción detallada de la arquitectura hexagonal.
-- gRPC vs REST: Comparativa y razones para elegir gRPC en el core.
+## Usage
+### Making Requests
+- Use any REST client to interact with the RESTful services.
+- Example request: `curl -X GET http://localhost:8080/api/v1/resource`
 
-## Equipo de Desarrollo
-- [Nombre del Desarrollador](enlace-github)
-- [Otro Colaborador](enlace-colaborador)
+## Contributing
+Contributions to this project are welcome. Please follow these steps:
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/yourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/yourFeature`).
+5. Create a new Pull Request.
 
-## Licencia
-Este proyecto está bajo la Licencia MIT - ver el archivo `LICENSE.md` para detalles.
+## Code of Conduct
+Please refer to the `CODE_OF_CONDUCT.md` file for guidelines on community interaction.
 
-## Contacto
-- [Correo Electrónico](mailto:contacto@hexamicro.com)
-- [GitHub Issues](enlace-a-issues-del-proyecto) para reportar bugs o solicitar características.
+## License
+This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
+## Contact
+For support or queries, please email us at `support@yourproject.com`.
+
+## Acknowledgments
+- Special thanks to contributors and the open-source community.
+- Inspired by the principles of hexagonal architecture and microservices.
