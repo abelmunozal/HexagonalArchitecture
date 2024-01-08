@@ -102,7 +102,9 @@ As guidelines:
 
 ### Postman
 
+    ![grpc findAll](resources/images/postman-findAll.png)
 
+    ![http findAll](resources/images/postman-http-findAll.png)
 
 ### curl
 
