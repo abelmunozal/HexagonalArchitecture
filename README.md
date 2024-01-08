@@ -79,6 +79,35 @@ In order to install, build, execute and test the project you can follow two flav
     - **static://localhost:9090** for the H2 core service.
     The `BCNC_GRPC_SERVER_ADDRESS` can be updated modifying the [docker-compose.yml](docker-compose.yml) script.
 
+## Usage
+You can use several tools to interact with the services.
+
+As guidelines:
+- The gRPC API services entrypoints are defined in their [protobuf](src/protobuf/src/inditex.proto) file.
+- The RESTful API services entrypoints are define in the Swagger UI address: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+### grpcurl
+
+    ```
+    curl --location 'http://localhost:8080/albums'
+    ```
+
+   ```
+   curl --location 'http://localhost:8080/albums' \
+        --header 'Content-Type: application/json' \
+        --data '{"name": "REST Test album 3", "description": "This is a REST test album", "photos": []}'
+   ```
+### Postman
+
+
+
+### curl
+
+
+### Making Requests
+- Use any REST client to interact with the RESTful services.
+- Example request: `curl -X GET http://localhost:8080/api/v1/resource`
+
 ## License
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
