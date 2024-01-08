@@ -1,6 +1,6 @@
 # Hexagonal Architecture with REST and gRPC Microservices
-This folder contains the tools required to compile, execute and test the project. In roder to make anything, you must download the tools from the their URL and unzip them in this folder.
-The path to every tools, and the folder itself, is set in the \setenv.cmd script.
+This folder contains the tools required to compile, execute and test the project. In order to do anything, you must download the tools from their URL (indicated below) and unzip them in this folder.
+The path to every tool, and this folder itself, is set in the \setenv.cmd script.
 
 ## Tools
 - Apache Maven 3.9.6: https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip
